@@ -17,6 +17,7 @@
 		CF488C1D2220845B00ECFCE2 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF488C1C2220845B00ECFCE2 /* Theme.swift */; };
 		CF488C1F222085C700ECFCE2 /* FugazOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF488C1E222085C700ECFCE2 /* FugazOne-Regular.ttf */; };
 		CF488C21222087EA00ECFCE2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF488C20222087EA00ECFCE2 /* Colors.xcassets */; };
+		CF488C2322209B9800ECFCE2 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF488C2222209B9800ECFCE2 /* UIButton.swift */; };
 		CF811D092219608B00A8A313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF811D082219608B00A8A313 /* AppDelegate.swift */; };
 		CF811D102219608C00A8A313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF811D0F2219608C00A8A313 /* Assets.xcassets */; };
 		CF811D132219608C00A8A313 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF811D112219608C00A8A313 /* LaunchScreen.storyboard */; };
@@ -33,6 +34,7 @@
 		CF488C1C2220845B00ECFCE2 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		CF488C1E222085C700ECFCE2 /* FugazOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FugazOne-Regular.ttf"; sourceTree = "<group>"; };
 		CF488C20222087EA00ECFCE2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		CF488C2222209B9800ECFCE2 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		CF811D052219608B00A8A313 /* Itinerary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Itinerary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF811D082219608B00A8A313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF811D0F2219608C00A8A313 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				CF488C1922207ABC00ECFCE2 /* UIView.swift */,
+				CF488C2222209B9800ECFCE2 /* UIButton.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				CF488C0D222038D100ECFCE2 /* TripFunctions.swift in Sources */,
 				CF488C0B222038B200ECFCE2 /* TripModel.swift in Sources */,
 				CF488C15222063C200ECFCE2 /* TripsViewController.swift in Sources */,
+				CF488C2322209B9800ECFCE2 /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
