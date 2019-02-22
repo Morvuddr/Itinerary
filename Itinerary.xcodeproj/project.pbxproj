@@ -12,6 +12,7 @@
 		CF488C0F22203B9500ECFCE2 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF488C0E22203B9500ECFCE2 /* Data.swift */; };
 		CF488C132220638D00ECFCE2 /* TripsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF488C122220638D00ECFCE2 /* TripsViewController.storyboard */; };
 		CF488C15222063C200ECFCE2 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF488C14222063C200ECFCE2 /* TripsViewController.swift */; };
+		CF488C1722206DF700ECFCE2 /* TripsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF488C1622206DF700ECFCE2 /* TripsTableViewCell.swift */; };
 		CF811D092219608B00A8A313 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF811D082219608B00A8A313 /* AppDelegate.swift */; };
 		CF811D102219608C00A8A313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF811D0F2219608C00A8A313 /* Assets.xcassets */; };
 		CF811D132219608C00A8A313 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF811D112219608C00A8A313 /* LaunchScreen.storyboard */; };
@@ -23,6 +24,7 @@
 		CF488C0E22203B9500ECFCE2 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		CF488C122220638D00ECFCE2 /* TripsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TripsViewController.storyboard; sourceTree = "<group>"; };
 		CF488C14222063C200ECFCE2 /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
+		CF488C1622206DF700ECFCE2 /* TripsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewCell.swift; sourceTree = "<group>"; };
 		CF811D052219608B00A8A313 /* Itinerary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Itinerary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF811D082219608B00A8A313 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF811D0F2219608C00A8A313 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			children = (
 				CF488C122220638D00ECFCE2 /* TripsViewController.storyboard */,
 				CF488C14222063C200ECFCE2 /* TripsViewController.swift */,
+				CF488C1622206DF700ECFCE2 /* TripsTableViewCell.swift */,
 			);
 			path = TripsViewController;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF488C1722206DF700ECFCE2 /* TripsTableViewCell.swift in Sources */,
 				CF488C0F22203B9500ECFCE2 /* Data.swift in Sources */,
 				CF811D092219608B00A8A313 /* AppDelegate.swift in Sources */,
 				CF488C0D222038D100ECFCE2 /* TripFunctions.swift in Sources */,
