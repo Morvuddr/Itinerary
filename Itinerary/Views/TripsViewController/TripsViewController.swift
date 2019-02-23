@@ -36,8 +36,8 @@ extension TripsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TripsTableViewCell
-        
         cell.setup(Data.tripModels[indexPath.row])
+        
         return cell
     }
     
