@@ -13,6 +13,7 @@ class AddTripViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tripTextField: UITextField!
     
+    var doneSaving: (() -> ())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,12 @@ class AddTripViewController: UIViewController {
         dismiss(animated: true)
     }
     @IBAction func save(_ sender: UIButton) {
+        
+        TripFunctions.createTrip(TripModel(tripTextField.text!))
+        
+        if let doneSaving = doneSaving {
+            doneSaving()
+        }
         dismiss(animated: true)
     }
     

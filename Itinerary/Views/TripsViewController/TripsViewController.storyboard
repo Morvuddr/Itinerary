@@ -62,7 +62,7 @@
                                 <color key="backgroundColor" name="Tint"/>
                                 <state key="normal" image="ButtonPlus"/>
                                 <connections>
-                                    <segue destination="r2l-64-KYD" kind="presentation" id="HKN-il-ldg"/>
+                                    <segue destination="r2l-64-KYD" kind="presentation" identifier="toAddTripSegue" id="HKN-il-ldg"/>
                                 </connections>
                             </button>
                         </subviews>
