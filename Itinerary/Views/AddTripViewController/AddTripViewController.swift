@@ -16,6 +16,7 @@ class AddTripViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     var doneSaving: (() -> ())?
+    var tripIndexToEdit: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,13 @@ class AddTripViewController: UIViewController {
         titleLabel.layer.shadowColor = UIColor.white.cgColor
         titleLabel.layer.shadowOffset = CGSize.zero
         titleLabel.layer.shadowRadius = 5
+        
+        if let index = tripIndexToEdit {
+            let trip = Data.tripModels[index]
+            tripTextField.text = trip.title
+            imageView.image = trip.image
+            titleLabel.text = "Edit Trip"
+        }
         
     }
     
@@ -46,8 +54,11 @@ class AddTripViewController: UIViewController {
             tripTextField.rightViewMode = .always
             return
         }
-        
-        TripFunctions.createTrip(TripModel(newTripName, imageView.image))
+        if let index = tripIndexToEdit{
+            TripFunctions.updateTrip(at: index, title: newTripName, image: imageView.image)
+        } else {
+            TripFunctions.createTrip(TripModel(newTripName, imageView.image))
+        }
         
         if let doneSaving = doneSaving {
             doneSaving()
@@ -62,40 +73,39 @@ class AddTripViewController: UIViewController {
     }
     
     @IBAction func addPhoto(_ sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
-            PHPhotoLibrary.requestAuthorization { (status) in
-                switch status{
-                case .authorized:
-                    self.presentPhotoPickerController()
-                case .notDetermined:
-                    self.presentPhotoPickerController()
-                case .restricted:
-                    
-                    let alert = UIAlertController(title: "Photo Library Restricted", message: "Photo Library access is restricted and cannot be accessed", preferredStyle: .alert)
-                    
-                    let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    alert.addAction(okButton)
-                    
-                    self.present(alert, animated: true)
-                    
-                case .denied:
-                    
-                    let alert = UIAlertController(title: "Photo Library Access Denied", message: "Photo Library access was previosly denied. Please go to the Settings if you want to change this.", preferredStyle: .alert)
-                    
-                    let goToSettingsAction = UIAlertAction(title: "Go to Settings", style: .default) {
-                        (action) in
-                        DispatchQueue.main.async{
-                            let url = URL(string: UIApplication.openSettingsURLString)!
-                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                        }
+        
+        PHPhotoLibrary.requestAuthorization { (status) in
+            switch status{
+            case .authorized:
+                self.presentPhotoPickerController()
+            case .notDetermined:
+                self.presentPhotoPickerController()
+            case .restricted:
+                
+                let alert = UIAlertController(title: "Photo Library Restricted", message: "Photo Library access is restricted and cannot be accessed", preferredStyle: .alert)
+                
+                let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(okButton)
+                
+                self.present(alert, animated: true)
+                
+            case .denied:
+                
+                let alert = UIAlertController(title: "Photo Library Access Denied", message: "Photo Library access was previosly denied. Please go to the Settings if you want to change this.", preferredStyle: .alert)
+                
+                let goToSettingsAction = UIAlertAction(title: "Go to Settings", style: .default) {
+                    (action) in
+                    DispatchQueue.main.async{
+                        let url = URL(string: UIApplication.openSettingsURLString)!
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     }
-                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                    
-                    alert.addAction(goToSettingsAction)
-                    alert.addAction(cancelAction)
-                    
-                    self.present(alert, animated: true)
                 }
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                
+                alert.addAction(goToSettingsAction)
+                alert.addAction(cancelAction)
+                
+                self.present(alert, animated: true)
             }
         }
     }
