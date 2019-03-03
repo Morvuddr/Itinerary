@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Udl-Tg-qZd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Activities View Controller-->
+        <scene sceneID="s5S-9B-ZAr">
+            <objects>
+                <viewController id="Udl-Tg-qZd" customClass="ActivitiesViewController" customModule="Itinerary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="opM-yA-Yh8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GA3-OP-hOV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g9h-7k-gfP">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g9h-7k-gfP" firstAttribute="leading" secondItem="jHW-2g-IO2" secondAttribute="leading" id="5br-Ns-V4P"/>
+                            <constraint firstItem="g9h-7k-gfP" firstAttribute="trailing" secondItem="jHW-2g-IO2" secondAttribute="trailing" id="8tI-dv-CUM"/>
+                            <constraint firstAttribute="bottom" secondItem="g9h-7k-gfP" secondAttribute="bottom" id="FPt-WU-AAi"/>
+                            <constraint firstAttribute="bottom" secondItem="GA3-OP-hOV" secondAttribute="bottom" id="LGF-HQ-wYH"/>
+                            <constraint firstItem="GA3-OP-hOV" firstAttribute="leading" secondItem="opM-yA-Yh8" secondAttribute="leading" id="f5M-cQ-Xqz"/>
+                            <constraint firstAttribute="trailing" secondItem="GA3-OP-hOV" secondAttribute="trailing" id="fB8-B5-zia"/>
+                            <constraint firstItem="GA3-OP-hOV" firstAttribute="top" secondItem="opM-yA-Yh8" secondAttribute="top" id="o2J-jb-Khs"/>
+                            <constraint firstItem="g9h-7k-gfP" firstAttribute="top" secondItem="jHW-2g-IO2" secondAttribute="top" id="vOC-rI-Og0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jHW-2g-IO2"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="GA3-OP-hOV" id="vaP-3h-DPv"/>
+                        <outlet property="tableView" destination="g9h-7k-gfP" id="S0g-8y-5zd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgG-ys-Nua" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-178.40000000000001" y="-3.1484257871064472"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="Tint"/>
+</document>

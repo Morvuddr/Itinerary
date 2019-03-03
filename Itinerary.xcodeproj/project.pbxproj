@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		CF3EFD3922218323004666FF /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3EFD3822218323004666FF /* AddTripViewController.swift */; };
+		CF430AB4222BDC7B00598BBB /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF430AB3222BDC7B00598BBB /* DayModel.swift */; };
+		CF430AB6222BDDE200598BBB /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF430AB5222BDDE200598BBB /* ActivityModel.swift */; };
+		CF430AB8222BDED900598BBB /* ActivityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF430AB7222BDED900598BBB /* ActivityType.swift */; };
+		CF430ABA222BF0B800598BBB /* ActivitiesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF430AB9222BF0B800598BBB /* ActivitiesViewController.storyboard */; };
+		CF430ABC222BF0FE00598BBB /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF430ABB222BF0FE00598BBB /* ActivitiesViewController.swift */; };
+		CF430ABE222C03E200598BBB /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF430ABD222C03E200598BBB /* MockData.swift */; };
 		CF488C0B222038B200ECFCE2 /* TripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF488C0A222038B200ECFCE2 /* TripModel.swift */; };
 		CF488C0D222038D100ECFCE2 /* TripFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF488C0C222038D100ECFCE2 /* TripFunctions.swift */; };
 		CF488C0F22203B9500ECFCE2 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF488C0E22203B9500ECFCE2 /* Data.swift */; };
@@ -29,6 +35,12 @@
 
 /* Begin PBXFileReference section */
 		CF3EFD3822218323004666FF /* AddTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
+		CF430AB3222BDC7B00598BBB /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
+		CF430AB5222BDDE200598BBB /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		CF430AB7222BDED900598BBB /* ActivityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityType.swift; sourceTree = "<group>"; };
+		CF430AB9222BF0B800598BBB /* ActivitiesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActivitiesViewController.storyboard; sourceTree = "<group>"; };
+		CF430ABB222BF0FE00598BBB /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
+		CF430ABD222C03E200598BBB /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		CF488C0A222038B200ECFCE2 /* TripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripModel.swift; sourceTree = "<group>"; };
 		CF488C0C222038D100ECFCE2 /* TripFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripFunctions.swift; sourceTree = "<group>"; };
 		CF488C0E22203B9500ECFCE2 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -70,11 +82,40 @@
 			path = AddTripViewController;
 			sourceTree = "<group>";
 		};
+		CF430AB0222BD0B100598BBB /* ActivitiesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CF430AB9222BF0B800598BBB /* ActivitiesViewController.storyboard */,
+				CF430ABB222BF0FE00598BBB /* ActivitiesViewController.swift */,
+			);
+			path = ActivitiesViewController;
+			sourceTree = "<group>";
+		};
+		CF430AB1222BDC3200598BBB /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				CF430AB3222BDC7B00598BBB /* DayModel.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		CF430AB2222BDC3900598BBB /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				CF430AB5222BDDE200598BBB /* ActivityModel.swift */,
+				CF430AB7222BDED900598BBB /* ActivityType.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
 		CF488C082220387100ECFCE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				CF488C0E22203B9500ECFCE2 /* Data.swift */,
+				CF430ABD222C03E200598BBB /* MockData.swift */,
 				CF488C092220388A00ECFCE2 /* Trip */,
+				CF430AB1222BDC3200598BBB /* Day */,
+				CF430AB2222BDC3900598BBB /* Activity */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -91,8 +132,9 @@
 		CF488C102220633300ECFCE2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CF3EFD37222182EF004666FF /* AddTripViewController */,
 				CF488C112220633C00ECFCE2 /* TripsViewController */,
+				CF3EFD37222182EF004666FF /* AddTripViewController */,
+				CF430AB0222BD0B100598BBB /* ActivitiesViewController */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -123,6 +165,7 @@
 				CF488C1822207A9400ECFCE2 /* Extentions */,
 				CF488C1E222085C700ECFCE2 /* FugazOne-Regular.ttf */,
 				CF488C1C2220845B00ECFCE2 /* Theme.swift */,
+				CF811D0F2219608C00A8A313 /* Assets.xcassets */,
 				CF488C20222087EA00ECFCE2 /* Colors.xcassets */,
 			);
 			path = Resources;
@@ -151,7 +194,6 @@
 				CF488C082220387100ECFCE2 /* Model */,
 				CF488C102220633300ECFCE2 /* Views */,
 				CF811D082219608B00A8A313 /* AppDelegate.swift */,
-				CF811D0F2219608C00A8A313 /* Assets.xcassets */,
 				CF811D112219608C00A8A313 /* LaunchScreen.storyboard */,
 				CF811D142219608C00A8A313 /* Info.plist */,
 			);
@@ -228,6 +270,7 @@
 				CFF860D52221BC6F005CFC7B /* AddTripViewController.storyboard in Resources */,
 				CF488C21222087EA00ECFCE2 /* Colors.xcassets in Resources */,
 				CF811D132219608C00A8A313 /* LaunchScreen.storyboard in Resources */,
+				CF430ABA222BF0B800598BBB /* ActivitiesViewController.storyboard in Resources */,
 				CF488C132220638D00ECFCE2 /* TripsViewController.storyboard in Resources */,
 				CF488C1F222085C700ECFCE2 /* FugazOne-Regular.ttf in Resources */,
 				CF811D102219608C00A8A313 /* Assets.xcassets in Resources */,
@@ -242,7 +285,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF488C1722206DF700ECFCE2 /* TripsTableViewCell.swift in Sources */,
+				CF430AB8222BDED900598BBB /* ActivityType.swift in Sources */,
 				CF488C1D2220845B00ECFCE2 /* Theme.swift in Sources */,
+				CF430ABE222C03E200598BBB /* MockData.swift in Sources */,
 				CF488C0F22203B9500ECFCE2 /* Data.swift in Sources */,
 				CFB86BD62221C732002F2D06 /* AppButton.swift in Sources */,
 				CF811D092219608B00A8A313 /* AppDelegate.swift in Sources */,
@@ -250,8 +295,11 @@
 				CF3EFD3922218323004666FF /* AddTripViewController.swift in Sources */,
 				CF488C0D222038D100ECFCE2 /* TripFunctions.swift in Sources */,
 				CF488C0B222038B200ECFCE2 /* TripModel.swift in Sources */,
+				CF430AB4222BDC7B00598BBB /* DayModel.swift in Sources */,
 				CF488C15222063C200ECFCE2 /* TripsViewController.swift in Sources */,
 				CF488C2322209B9800ECFCE2 /* UIButtonExtensions.swift in Sources */,
+				CF430ABC222BF0FE00598BBB /* ActivitiesViewController.swift in Sources */,
+				CF430AB6222BDDE200598BBB /* ActivityModel.swift in Sources */,
 				CFF860D82221C200005CFC7B /* PopupUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

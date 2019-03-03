@@ -17,15 +17,26 @@ class TripFunctions {
     
     static func readTrips(completion: @escaping () -> ()){
         DispatchQueue.global(qos: .userInteractive).async {
-//            if Data.tripModels.count == 0 {
-//                Data.tripModels.append(TripModel("Trip to Bali!"))
-//                Data.tripModels.append(TripModel("Mexico!"))
-//                Data.tripModels.append(TripModel("Russian Trip!"))
-//            }
+            if Data.tripModels.count == 0 {
+                Data.tripModels = MockData.createMockTripModelData()
+            }
             DispatchQueue.main.async {
                 completion()
             }
         }
+    }
+    
+    static func readTrip(by id: UUID, completion: @escaping (TripModel?) -> ()){
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            
+            let trip = Data.tripModels.first(where: {$0.id == id})
+            
+            DispatchQueue.main.async {
+                completion(trip)
+            }
+        }
+        
     }
     
     static func updateTrip(at index: Int, title: String, image: UIImage? = nil){

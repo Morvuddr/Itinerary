@@ -110,8 +110,19 @@ extension TripsViewController: UITableViewDataSource, UITableViewDelegate {
             self.performSegue(withIdentifier: "toAddTripSegue", sender: nil)
             actionPerformed(true)
         }
+        edit.image = UIImage(named: "Edit")
         edit.backgroundColor = UIColor(named: "Edit")
         return UISwipeActionsConfiguration(actions: [edit])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let trip = Data.tripModels[indexPath.row]
+        
+        let storyboard = UIStoryboard(name: String(describing: ActivitiesViewController.self), bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController() as! ActivitiesViewController
+        viewController.tripId = trip.id
+        
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
 }
