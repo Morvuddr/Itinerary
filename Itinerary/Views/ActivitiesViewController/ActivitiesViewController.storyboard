@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +23,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GA3-OP-hOV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g9h-7k-gfP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g9h-7k-gfP">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,7 +33,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U9y-kr-eoV" id="pdP-sy-RBJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EhY-cJ-h2r">
@@ -65,6 +66,70 @@
                                             <outlet property="titleLabel" destination="aY6-3S-ku7" id="LMo-gH-vs0"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="100" id="elg-aG-yVY" customClass="ActivityTableViewCell" customModule="Itinerary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="elg-aG-yVY" id="sjh-8a-Zxo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7BW-a5-fWu">
+                                                    <rect key="frame" x="15" y="11" width="345" height="78"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dfv-bb-daA">
+                                                            <rect key="frame" x="78" y="12" width="255" height="54"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hk7-3k-jzy">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="255" height="23"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="InX-Hp-vDE">
+                                                                    <rect key="frame" x="0.0" y="31" width="255" height="23"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aNE-7A-mTj">
+                                                            <rect key="frame" x="12" y="12" width="54" height="54"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="aNE-7A-mTj" secondAttribute="height" id="Rdb-Rr-me5"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="Accent"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="aNE-7A-mTj" secondAttribute="bottom" constant="12" id="6DN-kr-zV0"/>
+                                                        <constraint firstItem="aNE-7A-mTj" firstAttribute="leading" secondItem="7BW-a5-fWu" secondAttribute="leading" constant="12" id="6t7-Fh-LrV"/>
+                                                        <constraint firstAttribute="height" constant="78" id="MQZ-Qv-PNI"/>
+                                                        <constraint firstAttribute="bottom" secondItem="dfv-bb-daA" secondAttribute="bottom" constant="12" id="Oec-PQ-woI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="dfv-bb-daA" secondAttribute="trailing" constant="12" id="PJR-5R-AHX"/>
+                                                        <constraint firstItem="dfv-bb-daA" firstAttribute="leading" secondItem="aNE-7A-mTj" secondAttribute="trailing" constant="12" id="Q0g-E4-bAY"/>
+                                                        <constraint firstItem="dfv-bb-daA" firstAttribute="top" secondItem="7BW-a5-fWu" secondAttribute="top" constant="12" id="TWX-RL-qq2"/>
+                                                        <constraint firstItem="aNE-7A-mTj" firstAttribute="top" secondItem="7BW-a5-fWu" secondAttribute="top" constant="12" id="adP-Wz-Wq8"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="7BW-a5-fWu" firstAttribute="trailing" secondItem="sjh-8a-Zxo" secondAttribute="trailingMargin" id="KPv-1L-A0t"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="7BW-a5-fWu" secondAttribute="bottom" id="iQG-UL-Iti"/>
+                                                <constraint firstItem="7BW-a5-fWu" firstAttribute="top" secondItem="sjh-8a-Zxo" secondAttribute="topMargin" id="tSC-vz-j2D"/>
+                                                <constraint firstItem="7BW-a5-fWu" firstAttribute="leading" secondItem="sjh-8a-Zxo" secondAttribute="leadingMargin" id="tgD-1F-PcO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="activityImageView" destination="aNE-7A-mTj" id="XtB-Cl-74h"/>
+                                            <outlet property="cardView" destination="7BW-a5-fWu" id="bIF-Yt-Pa5"/>
+                                            <outlet property="subtitleLabel" destination="InX-Hp-vDE" id="otx-vL-cIe"/>
+                                            <outlet property="titleLabel" destination="Hk7-3k-jzy" id="pBa-7d-S4a"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -91,5 +156,10 @@
             <point key="canvasLocation" x="-178.40000000000001" y="-3.1484257871064472"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Accent">
+            <color red="0.14509803921568629" green="0.20000000000000001" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
     <color key="tintColor" name="Tint"/>
 </document>

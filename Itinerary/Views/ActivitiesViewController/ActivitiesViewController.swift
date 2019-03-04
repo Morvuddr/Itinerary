@@ -46,16 +46,13 @@ extension ActivitiesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        }
+        let model = tripModel?.dayModels[indexPath.section].activityModels[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ActivityTableViewCell
         
-        cell?.textLabel?.text = tripModel?.dayModels[indexPath.section].activityModels[indexPath.row].title
-        cell?.detailTextLabel?.text = tripModel?.dayModels[indexPath.section].activityModels[indexPath.row].subtitle
+        cell.setup(model!)
         
-        return cell!
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
