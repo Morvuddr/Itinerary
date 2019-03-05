@@ -33,7 +33,7 @@ class ActivitiesViewController: UIViewController {
             self.tableView.reloadData()
         }
         
-        sectionHeaderHeight =  tableView.dequeueReusableCell(withIdentifier: "headerCell")?.contentView.bounds.height ?? 44
+        sectionHeaderHeight =  tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier)?.contentView.bounds.height ?? 44
         
     }
 }
@@ -48,7 +48,7 @@ extension ActivitiesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let model = tripModel?.dayModels[indexPath.section].activityModels[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ActivityTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ActivityTableViewCell.identifier) as! ActivityTableViewCell
         
         cell.setup(model!)
         
@@ -63,7 +63,7 @@ extension ActivitiesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let dayModel = tripModel?.dayModels[section]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! HeaderTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier) as! HeaderTableViewCell
         cell.setup(dayModel!)
         
         return cell.contentView
