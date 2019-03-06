@@ -44,14 +44,8 @@ class AddTripViewController: UIViewController {
         dismiss(animated: true)
     }
     @IBAction func save(_ sender: UIButton) {
-        tripTextField.rightViewMode = .never
         
-        guard tripTextField.text != "", let newTripName = tripTextField.text else {
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
-            imageView.image = UIImage(named: "Warning")
-            imageView.contentMode = .scaleAspectFit
-            tripTextField.rightView = imageView
-            tripTextField.rightViewMode = .always
+        guard tripTextField.hasValue, let newTripName = tripTextField.text else {
             return
         }
         if let index = tripIndexToEdit{

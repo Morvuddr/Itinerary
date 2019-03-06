@@ -23,28 +23,15 @@ class AddDayViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         titleLabel.font = UIFont(name: Theme.mainFontName, size: 24)
-        
-        //Drop shadow on title
-        titleLabel.layer.shadowOpacity = 1
-        titleLabel.layer.shadowColor = UIColor.white.cgColor
-        titleLabel.layer.shadowOffset = CGSize.zero
-        titleLabel.layer.shadowRadius = 5
-        
-        
+
     }
     
     @IBAction func cancel(_ sender: UIButton) {
         dismiss(animated: true)
     }
     @IBAction func save(_ sender: UIButton) {
-        titleTextField.rightViewMode = .never
         
-        guard titleTextField.text != "", let newTripName = titleTextField.text else {
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
-            imageView.image = UIImage(named: "Warning")
-            imageView.contentMode = .scaleAspectFit
-            titleTextField.rightView = imageView
-            titleTextField.rightViewMode = .always
+        guard titleTextField.hasValue, let newTripName = titleTextField.text else {
             return
         }
 //        if let index = tripIndexToEdit{
