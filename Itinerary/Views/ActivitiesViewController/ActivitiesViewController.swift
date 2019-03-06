@@ -20,15 +20,7 @@ class ActivitiesViewController: UIViewController {
     var tripModel: TripModel?
     var sectionHeaderHeight: CGFloat = 0.0
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        title = tripTitle
-        addButton.createFloatingActionButton()
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-
+    fileprivate func updateTableViewWithTripData() {
         TripFunctions.readTrip(by: tripId) { [weak self] (model) in
             guard let self = self else { return }
             self.tripModel = model
@@ -38,20 +30,50 @@ class ActivitiesViewController: UIViewController {
             self.backgroundImageView.image = model.image
             self.tableView.reloadData()
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = tripTitle
+        addButton.createFloatingActionButton()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+
+        updateTableViewWithTripData()
         
         sectionHeaderHeight =  tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier)?.contentView.bounds.height ?? 44
         
     }
     
     @IBAction func addAction(_ sender: AppButton) {
+        
         let alert = UIAlertController(title: "Which would you like to add?", message: nil, preferredStyle: .actionSheet)
+        
         let dayAction = UIAlertAction(title: "Day", style: .default) { (action) in
-            let viewController = AddDayViewController.getInstance()
+            
+            let viewController = AddDayViewController.getInstance() as! AddDayViewController
+            viewController.tripIndex = Data.tripModels.firstIndex(where: { (tripModel) -> Bool in
+                tripModel.id == self.tripId
+            })
+            viewController.doneSaving = { [weak self] dayModel in
+                
+                guard let self = self else { return }
+                
+                let indexArray = [self.tripModel?.dayModels.count ?? 0]
+                self.tripModel?.dayModels.append(dayModel)
+                self.tableView.insertSections(IndexSet(indexArray), with: UITableView.RowAnimation.automatic)
+                
+            }
             self.present(viewController, animated: true, completion: nil)
+            
         }
+        
         let activityAction = UIAlertAction(title: "Activity", style: .default) { (action) in
             print("Activity")
         }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         alert.addAction(dayAction)

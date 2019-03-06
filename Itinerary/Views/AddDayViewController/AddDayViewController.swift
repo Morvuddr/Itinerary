@@ -15,8 +15,8 @@ class AddDayViewController: UIViewController {
     @IBOutlet weak var subtitleTextField: UITextField!
 
     
-    var doneSaving: (() -> ())?
-    var tripIndexToEdit: Int?
+    var doneSaving: ((DayModel) -> ())?
+    var tripIndex: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +31,13 @@ class AddDayViewController: UIViewController {
     }
     @IBAction func save(_ sender: UIButton) {
         
-        guard titleTextField.hasValue, let newTripName = titleTextField.text else {
+        guard titleTextField.hasValue, let newDayName = titleTextField.text else {
             return
         }
+        
+        let dayModel = DayModel(newDayName, subtitleTextField.text ?? "", nil)
+        DayFunctions.createDay(at: tripIndex, using: dayModel)
+        
 //        if let index = tripIndexToEdit{
 //            TripFunctions.updateTrip(at: index, title: newTripName, image: imageView.image)
 //        } else {
@@ -41,7 +45,7 @@ class AddDayViewController: UIViewController {
 //        }
         
         if let doneSaving = doneSaving {
-            doneSaving()
+            doneSaving(dayModel)
         }
         dismiss(animated: true)
     }
