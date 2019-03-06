@@ -12,6 +12,7 @@ class ActivitiesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var addButton: AppButton!
     
     
     var tripId: UUID!
@@ -23,6 +24,7 @@ class ActivitiesViewController: UIViewController {
         super.viewDidLoad()
         
         title = tripTitle
+        addButton.createFloatingActionButton()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -40,6 +42,28 @@ class ActivitiesViewController: UIViewController {
         sectionHeaderHeight =  tableView.dequeueReusableCell(withIdentifier: HeaderTableViewCell.identifier)?.contentView.bounds.height ?? 44
         
     }
+    
+    @IBAction func addAction(_ sender: AppButton) {
+        let alert = UIAlertController(title: "Which would you like to add?", message: nil, preferredStyle: .actionSheet)
+        let dayAction = UIAlertAction(title: "Day", style: .default) { (action) in
+            let viewController = AddDayViewController.getInstance()
+            self.present(viewController, animated: true, completion: nil)
+        }
+        let activityAction = UIAlertAction(title: "Activity", style: .default) { (action) in
+            print("Activity")
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(dayAction)
+        alert.addAction(activityAction)
+        alert.addAction(cancelAction)
+        alert.popoverPresentationController?.sourceView = addButton
+        alert.popoverPresentationController?.sourceRect = CGRect(x: 0, y: -3, width: addButton.bounds.width, height: addButton.bounds.height)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
 }
 
 

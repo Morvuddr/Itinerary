@@ -62,10 +62,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mu6-f7-eze">
-                                <rect key="frame" x="300" y="526" width="56" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mu6-f7-eze" customClass="AppButton" customModule="Itinerary" customModuleProvider="target">
+                                <rect key="frame" x="299" y="527" width="56" height="56"/>
                                 <color key="backgroundColor" name="Tint"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="Xum-GI-2x2"/>
+                                    <constraint firstAttribute="height" constant="56" id="bKL-5s-Y7S"/>
+                                </constraints>
                                 <state key="normal" image="ButtonPlus"/>
                                 <connections>
                                     <segue destination="r2l-64-KYD" kind="presentation" identifier="toAddTripSegue" id="HKN-il-ldg"/>
@@ -73,6 +76,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8jZ-Df-gvP" firstAttribute="bottom" secondItem="mu6-f7-eze" secondAttribute="bottom" constant="20" id="9y5-ky-u10"/>
+                            <constraint firstItem="8jZ-Df-gvP" firstAttribute="trailing" secondItem="mu6-f7-eze" secondAttribute="trailing" constant="20" id="kOV-ma-2x0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8jZ-Df-gvP"/>
                     </view>
                     <navigationItem key="navigationItem" title="Trips" id="0my-VF-Wt0"/>

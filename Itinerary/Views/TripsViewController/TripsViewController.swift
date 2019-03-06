@@ -29,12 +29,10 @@ class TripsViewController: UIViewController {
             if Data.tripModels.count > 0 {
                 if UserDefaults.standard.bool(forKey: self.seenHelpView) == false {
                     self.view.addSubview(self.helpView)
-                    self.helpView.frame = self.view.frame
+                    self.helpView.frame = self.view.bounds
                 }
             }
         })
-
-        
         view.backgroundColor = Theme.backgroung
         addButton.createFloatingActionButton()
     }
@@ -117,9 +115,7 @@ extension TripsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let trip = Data.tripModels[indexPath.row]
-        
-        let storyboard = UIStoryboard(name: String(describing: ActivitiesViewController.self), bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController() as! ActivitiesViewController
+        let viewController = ActivitiesViewController.getInstance() as! ActivitiesViewController
         viewController.tripId = trip.id
         viewController.tripTitle = trip.title
         

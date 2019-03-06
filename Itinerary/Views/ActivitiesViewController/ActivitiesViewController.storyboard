@@ -132,13 +132,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHE-LS-Sjf" customClass="AppButton" customModule="Itinerary" customModuleProvider="target">
+                                <rect key="frame" x="299" y="591" width="56" height="56"/>
+                                <color key="backgroundColor" name="Tint"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="8Jf-fK-Zyn"/>
+                                    <constraint firstAttribute="height" constant="56" id="mpI-8e-3u8"/>
+                                </constraints>
+                                <state key="normal" image="ButtonPlus"/>
+                                <connections>
+                                    <action selector="addAction:" destination="Udl-Tg-qZd" eventType="touchUpInside" id="co6-JP-hD4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="jHW-2g-IO2" firstAttribute="bottom" secondItem="iHE-LS-Sjf" secondAttribute="bottom" constant="20" id="4aT-8n-pks"/>
                             <constraint firstItem="g9h-7k-gfP" firstAttribute="leading" secondItem="jHW-2g-IO2" secondAttribute="leading" id="5br-Ns-V4P"/>
                             <constraint firstItem="g9h-7k-gfP" firstAttribute="trailing" secondItem="jHW-2g-IO2" secondAttribute="trailing" id="8tI-dv-CUM"/>
                             <constraint firstAttribute="bottom" secondItem="g9h-7k-gfP" secondAttribute="bottom" id="FPt-WU-AAi"/>
                             <constraint firstAttribute="bottom" secondItem="GA3-OP-hOV" secondAttribute="bottom" id="LGF-HQ-wYH"/>
+                            <constraint firstItem="jHW-2g-IO2" firstAttribute="trailing" secondItem="iHE-LS-Sjf" secondAttribute="trailing" constant="20" id="X3c-Of-E9w"/>
                             <constraint firstItem="GA3-OP-hOV" firstAttribute="leading" secondItem="opM-yA-Yh8" secondAttribute="leading" id="f5M-cQ-Xqz"/>
                             <constraint firstAttribute="trailing" secondItem="GA3-OP-hOV" secondAttribute="trailing" id="fB8-B5-zia"/>
                             <constraint firstItem="GA3-OP-hOV" firstAttribute="top" secondItem="opM-yA-Yh8" secondAttribute="top" id="o2J-jb-Khs"/>
@@ -147,6 +161,7 @@
                         <viewLayoutGuide key="safeArea" id="jHW-2g-IO2"/>
                     </view>
                     <connections>
+                        <outlet property="addButton" destination="iHE-LS-Sjf" id="jCa-Ml-ffQ"/>
                         <outlet property="backgroundImageView" destination="GA3-OP-hOV" id="vaP-3h-DPv"/>
                         <outlet property="tableView" destination="g9h-7k-gfP" id="S0g-8y-5zd"/>
                     </connections>
@@ -157,8 +172,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ButtonPlus" width="20" height="20"/>
         <namedColor name="Accent">
             <color red="0.14509803921568629" green="0.20000000000000001" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tint">
+            <color red="1" green="0.23921568627450981" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <color key="tintColor" name="Tint"/>
