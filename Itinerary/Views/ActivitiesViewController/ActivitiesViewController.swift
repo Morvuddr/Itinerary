@@ -51,9 +51,11 @@ class ActivitiesViewController: UIViewController {
         
         let alert = UIAlertController(title: "Which would you like to add?", message: nil, preferredStyle: .actionSheet)
         
+        // Add new Day
         let dayAction = UIAlertAction(title: "Day", style: .default) { (action) in
             
             let viewController = AddDayViewController.getInstance() as! AddDayViewController
+            viewController.tripModel = self.tripModel
             viewController.tripIndex = Data.tripModels.firstIndex(where: { (tripModel) -> Bool in
                 tripModel.id == self.tripId
             })
@@ -62,7 +64,6 @@ class ActivitiesViewController: UIViewController {
                 
                 guard let self = self else { return }
                 
-//                let indexArray = [self.tripModel?.dayModels.count ?? 0]
                 self.tripModel?.dayModels.append(dayModel)
                 let indexArray = [self.tripModel?.dayModels.firstIndex(of: dayModel) ?? 0]
                 
@@ -72,6 +73,8 @@ class ActivitiesViewController: UIViewController {
             self.present(viewController, animated: true, completion: nil)
             
         }
+        
+        // Add new Activity
         
         let activityAction = UIAlertAction(title: "Activity", style: .default) { (action) in
             print("Activity")
