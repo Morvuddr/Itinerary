@@ -11,7 +11,7 @@ import UIKit
 class AddDayViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var subtitleTextField: UITextField!
 
     
@@ -31,11 +31,9 @@ class AddDayViewController: UIViewController {
     }
     @IBAction func save(_ sender: UIButton) {
         
-        guard titleTextField.hasValue, let newDayName = titleTextField.text else {
-            return
-        }
+        //guard titleTextField.hasValue, let newDayName = titleTextField.text else {return}
         
-        let dayModel = DayModel(newDayName, subtitleTextField.text ?? "", nil)
+        let dayModel = DayModel(datePicker.date, subtitleTextField.text ?? "", nil)
         DayFunctions.createDay(at: tripIndex, using: dayModel)
         
 //        if let index = tripIndexToEdit{
@@ -49,5 +47,8 @@ class AddDayViewController: UIViewController {
         }
         dismiss(animated: true)
     }
-
+    @IBAction func done(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
 }

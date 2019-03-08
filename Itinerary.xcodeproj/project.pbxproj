@@ -36,6 +36,7 @@
 		CFADE91F222F32DA00C09D65 /* UITableViewCellExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADE91E222F32DA00C09D65 /* UITableViewCellExtention.swift */; };
 		CFB86BD62221C732002F2D06 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB86BD52221C732002F2D06 /* AppButton.swift */; };
 		CFC66890222D674B00A6D3E6 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC6688F222D674B00A6D3E6 /* ActivityTableViewCell.swift */; };
+		CFDCD40B22326F5700588AA5 /* DateExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDCD40A22326F5700588AA5 /* DateExtention.swift */; };
 		CFDDA337222C1D7C006852B7 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDDA336222C1D7C006852B7 /* HeaderTableViewCell.swift */; };
 		CFF860D52221BC6F005CFC7B /* AddTripViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFF860D42221BC6F005CFC7B /* AddTripViewController.storyboard */; };
 		CFF860D82221C200005CFC7B /* PopupUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF860D72221C200005CFC7B /* PopupUIView.swift */; };
@@ -73,6 +74,7 @@
 		CFADE91E222F32DA00C09D65 /* UITableViewCellExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtention.swift; sourceTree = "<group>"; };
 		CFB86BD52221C732002F2D06 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		CFC6688F222D674B00A6D3E6 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		CFDCD40A22326F5700588AA5 /* DateExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtention.swift; sourceTree = "<group>"; };
 		CFDDA336222C1D7C006852B7 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		CFF860D42221BC6F005CFC7B /* AddTripViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddTripViewController.storyboard; sourceTree = "<group>"; };
 		CFF860D72221C200005CFC7B /* PopupUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupUIView.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		CF488C1822207A9400ECFCE2 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				CFDCD40A22326F5700588AA5 /* DateExtention.swift */,
 				CF488C2222209B9800ECFCE2 /* UIButtonExtension.swift */,
 				CFADE91E222F32DA00C09D65 /* UITableViewCellExtention.swift */,
 				CF96985E22304D6C00DFD48B /* UITextFieldExtension.swift */,
@@ -334,6 +337,7 @@
 				CF488C0B222038B200ECFCE2 /* TripModel.swift in Sources */,
 				CF430AB4222BDC7B00598BBB /* DayModel.swift in Sources */,
 				CF488C15222063C200ECFCE2 /* TripsViewController.swift in Sources */,
+				CFDCD40B22326F5700588AA5 /* DateExtention.swift in Sources */,
 				CF488C2322209B9800ECFCE2 /* UIButtonExtension.swift in Sources */,
 				CF430ABC222BF0FE00598BBB /* ActivitiesViewController.swift in Sources */,
 				CFC66890222D674B00A6D3E6 /* ActivityTableViewCell.swift in Sources */,

@@ -20,11 +20,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FTO-5G-mno" customClass="PopupUIView" customModule="Itinerary" customModuleProvider="target">
-                                <rect key="frame" x="16" y="50" width="343" height="180"/>
+                                <rect key="frame" x="16" y="50" width="343" height="300"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ame-Ae-bPx">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="180"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWN-XJ-Oc3">
@@ -35,22 +35,18 @@
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="1" height="1"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title or date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KKr-5a-raW">
-                                        <rect key="frame" x="8" y="51" width="327" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description (optional)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGf-Ln-XR8">
-                                        <rect key="frame" x="8" y="90" width="327" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="8" y="210" width="327" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="done:" destination="lAn-dG-4OY" eventType="primaryActionTriggered" id="tIo-Bz-eZj"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkp-Na-LOS" customClass="AppButton" customModule="Itinerary" customModuleProvider="target">
-                                        <rect key="frame" x="235" y="128" width="100" height="44"/>
+                                        <rect key="frame" x="235" y="248" width="100" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
@@ -58,13 +54,20 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k70-5H-u9a" customClass="AppButton" customModule="Itinerary" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="128" width="100" height="44"/>
+                                        <rect key="frame" x="8" y="248" width="100" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
                                             <action selector="cancel:" destination="lAn-dG-4OY" eventType="touchUpInside" id="aOi-94-FWS"/>
                                         </connections>
                                     </button>
+                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6Mt-QM-Moh">
+                                        <rect key="frame" x="0.0" y="51" width="343" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="573731836.19848704">
+                                            <!--2019-03-08 09:57:16 +0000-->
+                                        </date>
+                                    </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="Tint"/>
@@ -74,9 +77,9 @@
                         <viewLayoutGuide key="safeArea" id="Tzw-y5-Vtb"/>
                     </view>
                     <connections>
+                        <outlet property="datePicker" destination="6Mt-QM-Moh" id="a5k-s1-E6v"/>
                         <outlet property="subtitleTextField" destination="pGf-Ln-XR8" id="Cxp-A7-rWG"/>
                         <outlet property="titleLabel" destination="WWN-XJ-Oc3" id="RHy-pd-5cc"/>
-                        <outlet property="titleTextField" destination="KKr-5a-raW" id="Obb-K8-O7V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pkK-HI-wvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
