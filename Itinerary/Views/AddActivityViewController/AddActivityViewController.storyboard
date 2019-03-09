@@ -52,6 +52,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="done:" destination="YjX-su-HWU" eventType="primaryActionTriggered" id="Ehb-sh-rG8"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5o-5T-jYR" customClass="AppButton" customModule="Itinerary" customModuleProvider="target">
                                         <rect key="frame" x="235" y="348" width="100" height="44"/>

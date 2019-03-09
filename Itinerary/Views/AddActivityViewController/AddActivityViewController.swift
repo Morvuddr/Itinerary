@@ -62,6 +62,10 @@ class AddActivityViewController: UIViewController {
         
     }
     
+    @IBAction func done(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
     func getSelectedActivityType() -> ActivityType {
         for (index, button) in activityTypeButtons.enumerated() {
             if button.tintColor == Theme.tint {
