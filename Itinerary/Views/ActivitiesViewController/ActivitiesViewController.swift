@@ -47,6 +47,12 @@ class ActivitiesViewController: UIViewController {
         
     }
     
+    fileprivate func getTripIndex() -> Int? {
+        return Data.tripModels.firstIndex(where: { (tripModel) -> Bool in
+            tripModel.id == self.tripId
+        })
+    }
+    
     @IBAction func addAction(_ sender: AppButton) {
         
         let alert = UIAlertController(title: "Which would you like to add?", message: nil, preferredStyle: .actionSheet)
@@ -56,9 +62,7 @@ class ActivitiesViewController: UIViewController {
             
             let viewController = AddDayViewController.getInstance() as! AddDayViewController
             viewController.tripModel = self.tripModel
-            viewController.tripIndex = Data.tripModels.firstIndex(where: { (tripModel) -> Bool in
-                tripModel.id == self.tripId
-            })
+            viewController.tripIndex = self.getTripIndex()
             
             viewController.doneSaving = { [weak self] dayModel in
                 
@@ -75,12 +79,30 @@ class ActivitiesViewController: UIViewController {
         }
         
         // Add new Activity
-        
         let activityAction = UIAlertAction(title: "Activity", style: .default) { (action) in
-            print("Activity")
+            
+            let viewController = AddActivityViewController.getInstance() as! AddActivityViewController
+            
+            viewController.tripModel = self.tripModel
+            viewController.tripIndex = self.getTripIndex()
+            viewController.doneSaving = { [weak self] dayIndex, activityModel in
+                
+                guard let self = self else { return }
+                
+                self.tripModel?.dayModels[dayIndex].activityModels.append(activityModel)
+                
+                let row = (self.tripModel?.dayModels[dayIndex].activityModels.count)! - 1
+                let indexPath = IndexPath(row: row, section: dayIndex)
+                self.tableView.insertRows(at: [indexPath], with: .automatic)
+                
+            }
+            
+            self.present(viewController, animated: true, completion: nil)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        activityAction.isEnabled = tripModel!.dayModels.count > 0
         
         alert.addAction(dayAction)
         alert.addAction(activityAction)
