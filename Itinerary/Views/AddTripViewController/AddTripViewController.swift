@@ -101,6 +101,8 @@ class AddTripViewController: UIViewController {
                 alert.addAction(cancelAction)
                 
                 self.present(alert, animated: true)
+            @unknown default:
+                print("Error")
             }
         }
     }
